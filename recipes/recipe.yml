@@ -58,8 +58,6 @@ modules:
       enabled:
         - greetd
     user:
-      disabled:
-        - mako.service
       enabled:
         - dms.service
 
