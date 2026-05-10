@@ -30,6 +30,11 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+  - type: dnf
+    remove:
+      packages:
+        - mako
+
 
   - type: files
     files:
