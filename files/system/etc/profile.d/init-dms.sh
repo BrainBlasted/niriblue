@@ -1,7 +1,11 @@
 # shellcheck shell="sh"
-# NIRI_CFG_DIR="$HOME/.config/"
-# DEFAULT_CFG_DIR="/etc/dms/defaults/niri"
-# 
-# if [ ! -f "$HOME/.config/niri/dms/" ]; then 
-#    cp -r $DEFAULT_CFG_DIR "$NIRI_CFG_DIR"
-# fi
+NIRI_CFG_DIR="$HOME/.config/"
+DEFAULT_CFG_DIR="/etc/dms/defaults/niri"
+# shellcheck disable=SC2034
+DMS_PRIVESC="sudo"
+
+if [ ! -f "$HOME/.config/niri/dms/" ]; then 
+   cp -r $DEFAULT_CFG_DIR "$NIRI_CFG_DIR"
+   dms setup outputs
+   dms setup layout
+fi
