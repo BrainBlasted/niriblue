@@ -6,6 +6,6 @@ DMS_PRIVESC="sudo"
 
 if [ ! -f "$HOME/.config/niri/dms/" ]; then 
    cp -r $DEFAULT_CFG_DIR "$NIRI_CFG_DIR"
-   dms setup outputs
-   dms setup layout
+   DMS_PRIVESC="sudo" dms setup outputs
+   DMS_PRIVESC="sudo" dms setup layout
 fi
