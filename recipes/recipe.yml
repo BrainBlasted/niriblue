@@ -29,11 +29,15 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+  # Remove GNOME default packages unless absolutely necessary
   - type: dnf
     remove:
       packages:
         - gdm
         - gnome-shell
+        - gnome-control-center
+        - gnome-software
+        - ptyxis
         - mako
 
 
