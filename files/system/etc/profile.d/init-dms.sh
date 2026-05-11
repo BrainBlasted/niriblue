@@ -1,8 +1,6 @@
 # shellcheck shell="bash"
 NIRI_CFG_DIR="$HOME/.config/"
 DEFAULT_CFG_DIR="/etc/dms/defaults/niri"
-# shellcheck disable=SC2034
-DMS_PRIVESC="sudo"
 
 if shopt -pq login_shell; then
     if [[ ! -d "$HOME/.config/niri/dms/" ]]; then 
