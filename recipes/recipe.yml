@@ -24,6 +24,7 @@ modules:
         - niri
         - dms
         - dms-greeter
+        - danksearch
         - greetd
     remove:
       packages:
@@ -36,9 +37,14 @@ modules:
         - gdm
         - gnome-shell
         - gnome-control-center
+        - gnome-system-monitor
         - gnome-software
+        - gnome-tour
         - ptyxis
+        - yelp
         - mako
+        - rygel
+        - htop
 
 
   - type: files
@@ -48,13 +54,15 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: false # Send notification after install/uninstall is finished (true/false)
-        scope: system
+      - scope: system
+        notify: false # Send notification after install/uninstall is finished (true/false)
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
+        notify: false
 
   - type: systemd
     system:
@@ -63,5 +71,6 @@ modules:
     user:
       enabled:
         - dms.service
+        - dsearch.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
